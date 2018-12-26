@@ -197,7 +197,32 @@ $(function(){
             }
         })
     })();
+
+    (function login() {
+
+        $(".reg-box .sub").click(
+            $.ajax({
+                type: "post",
+                url: "/www",
+                data: {
+                    "name":"why",
+                    "pwd":"123456"
+                },
+                dataType: "json",
+                success: function (response) {
+                 alert("登录成功");   
+                },
+
+                error: function() {
+                    alert("请求失败");   
+                }
+                                
+            })
+        );
+       
+    })();
 });	
+
 
 /*清除提示信息*/
 function emptyRegister(){
